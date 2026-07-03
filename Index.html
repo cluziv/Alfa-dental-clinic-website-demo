@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAPILLA COSMETIC CENTRE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-green: #2E5C4E; /* Dark Green */
+            --light-green: #E0F0E9; /* Light Green/Sage */
+            --white: #FFFFFF;
+            --light-bg: #F8F8F8;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --border-color: #DDDDDD;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-green);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            background-color: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .navbar .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-green);
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .navbar .nav-links a {
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .nav-links a:hover {
+            color: var(--primary-green);
+        }
+
+        .navbar .book-now-btn {
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar .book-now-btn:hover {
+            background-color: #244A3F;
+            box-shadow: 0 4px 12px rgba(46, 92, 78, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--light-green);
+            display: flex;
+            align-items: center;
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            flex: 1;
+            padding-right: 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .hero-actions a {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            margin-right: 1rem;
+        }
+
+        .hero-actions .btn-primary {
+            background-color: var(--primary-green);
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .hero-actions .btn-primary:hover {
+            background-color: #244A3F;
+            box-shadow: 0 4px 12px rgba(46, 92, 78, 0.3);
+        }
+
+        .hero-actions .btn-secondary {
+            background-color: var(--white);
+            color: var(--primary-green);
+            border: 2px solid var(--primary-green);
+            transition: all 0.3s ease;
+        }
+
+        .hero-actions .btn-secondary:hover {
+            background-color: var(--light-green);
+            box-shadow: 0 4px 12px rgba(46, 92, 78, 0.2);
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: right;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(46, 92, 78, 0.15);
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background-color: var(--white);
+            padding: 2rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 4rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            color: var(--text-light);
+        }
+
+        /* Treatments Grid */
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .treatments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .treatment-card {
+            background-color: var(--light-green);
+            border-radius: 20px;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(46, 92, 78, 0.1);
+        }
+
+        .treatment-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(46, 92, 78, 0.15);
+        }
+
+        .treatment-card .icon {
+            font-size: 3rem;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+        }
+
+        .treatment-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .treatment-card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Our Services */
+        .our-services {
+            background-color: var(--light-green);
+            padding: 4rem 0;
+            margin-top: 4rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background-color: #F5EFE7;
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border: 1px solid rgba(46, 92, 78, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card .number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+        }
+
+        .view-all-services {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        /* Why Thousands Trust Our Experts */
+        .trust-experts {
+            padding: 4rem 0;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .trust-image {
+            flex: 1;
+        }
+
+        .trust-image img {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(46, 92, 78, 0.15);
+        }
+
+        .trust-content {
+            flex: 1;
+        }
+
+        .trust-content ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .trust-content li {
+            background-color: var(--light-green);
+            padding: 1.2rem;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-weight: 500;
+            border: 1px solid rgba(46, 92, 78, 0.1);
+        }
+
+        /* Before/After Gallery */
+        .gallery {
+            background-color: var(--light-bg);
+            padding: 4rem 0;
+        }
+
+        .gallery-carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .gallery-item {
+            flex: 0 0 auto;
+            width: 300px; /* Adjust as needed */
+            scroll-snap-align: start;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 4rem 0;
+            background-color: var(--white);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .testimonial-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .testimonial-card .stars {
+            color: gold;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-card .patient-info {
+            display: flex;
+            align-items: center;
+            margin-top: 1.5rem;
+        }
+
+        .testimonial-card .patient-info img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 1rem;
+            object-fit: cover;
+        }
+
+        /* Video Tips */
+        .video-tips {
+            padding: 4rem 0;
+            background-color: var(--light-green);
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .video-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .video-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .video-card .video-title {
+            padding: 1rem;
+            font-weight: 600;
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 4rem 0;
+        }
+
+        .accordion-item {
+            background-color: var(--white);
+            border: 1px solid #E8E8E8;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .accordion-item:hover {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .accordion-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--primary-green);
+        }
+
+        .accordion-content {
+            padding: 0 1.5rem 1rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 200px; /* Adjust as needed */
+            transition: max-height 0.3s ease-in;
+        }
+
+        /* Appointment Form */
+        .appointment-section {
+            background-color: var(--light-bg);
+            padding: 4rem 0;
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+
+        .appointment-info {
+            flex: 1;
+        }
+
+        .appointment-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .appointment-info p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .appointment-form-card {
+            flex: 1;
+            background-color: var(--white);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .appointment-form-card input, .appointment-form-card select, .appointment-form-card button {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .appointment-form-card button {
+            background-color: var(--primary-green);
+            color: var(--white);
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .appointment-form-card button:hover {
+            background-color: #244A3F;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 4rem 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .footer-col .logo {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .footer-col p {
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-col ul a {
+            color: var(--white);
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-col ul a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.8;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .navbar .nav-links {
+                display: none;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-content {
+                padding-right: 0;
+                margin-bottom: 2rem;
+            }
+
+            .hero-image {
+                text-align: center;
+            }
+
+            .stats-grid, .treatments-grid, .services-grid, .testimonials-grid, .video-grid, .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .trust-experts, .appointment-section {
+                flex-direction: column;
+            }
+
+            .trust-content ul {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar container">
+        <div class="logo">CAPILLA</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#appointment" class="book-now-btn">Book Now</a>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Healthy Skin. Strong Hair. Confident You.</h1>
+                <p>Advanced skin & hair treatments with expert care, modern technology and personalized solutions for lasting results.</p>
+                <div class="hero-actions">
+                    <a href="#appointment" class="btn-primary">Book an Appointment</a>
+                    <a href="#services" class="btn-secondary">View our services</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1599577243924-21160352210a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1NzM4MTl8MHwxfHNlYXJjaHwxfHxjb3NtZXRpYyUyMGNsaW5pYyUyMGhlcm8lMjB3b21hbiUyMHNraW4lMjBjYXJlJTIwdW5zcGxhc2h8ZW58MHx8fHwxNzE5OTI3NTU3fDA&ixlib=rb-4.0.3&q=80&w=1080" alt="Woman receiving skin treatment">
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-bar">
+        <div class="container stats-grid">
+            <div class="stat-item">
+                <h3>10,000+</h3>
+                <p>Happy Patients</p>
+            </div>
+            <div class="stat-item">
+                <h3>5+ Yrs</h3>
+                <p>Experience</p>
+            </div>
+            <div class="stat-item">
+                <h3>Certified</h3>
+                <p>Specialists</p>
+            </div>
+            <div class="stat-item">
+                <h3>Advanced</h3>
+                <p>Technology</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="treatments container">
+        <div class="section-title">
+            <h2>Comprehensive Treatments Tailored for You</h2>
+            <p>We offer a wide range of advanced cosmetic treatments designed to enhance your natural beauty.</p>
+        </div>
+        <div class="treatments-grid">
+            <div class="treatment-card">
+                <div class="icon">✨</div>
+                <h3>Skin Care Treatments</h3>
+                <p>Rejuvenate your skin with personalized care.</p>
+            </div>
+            <div class="treatment-card">
+                <div class="icon">💇‍♀️</div>
+                <h3>Hair Transplantation</h3>
+                <p>Restore natural hair growth and density.</p>
+            </div>
+            <div class="treatment-card">
+                <div class="icon">⚡</div>
+                <h3>Laser Hair Removal</h3>
+                <p>Achieve smooth, hair-free skin permanently.</p>
+            </div>
+            <div class="treatment-card">
+                <div class="icon">💉</div>
+                <h3>Microneedling</h3>
+                <p>Improve skin texture and reduce scars.</p>
+            </div>
+            <div class="treatment-card">
+                <div class="icon">🧖‍♀️</div>
+                <h3>Skin Tightening</h3>
+                <p>Firm and lift your skin for a youthful look.</p>
+            </div>
+            <div class="treatment-card">
+                <div class="icon">👩‍⚕️</div>
+                <h3>Cosmetic Surgery</h3>
+                <p>Expert surgical solutions for lasting beauty.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="our-services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>Explore our specialized services for your beauty needs.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="number">01</div>
+                    <h3>Skin Care Treatments</h3>
+                    <p>From facials to advanced peels, we offer comprehensive solutions for radiant skin.</p>
+                </div>
+                <div class="service-card">
+                    <div class="number">02</div>
+                    <h3>Hair Transplantation</h3>
+                    <p>Advanced techniques for natural and effective hair restoration.</p>
+                </div>
+                <div class="service-card">
+                    <div class="number">03</div>
+                    <h3>Laser Hair Removal</h3>
+                    <p>Safe and effective laser treatments for permanent hair reduction.</p>
+                </div>
+                <div class="service-card">
+                    <div class="number">04</div>
+                    <h3>Cosmetic Surgery</h3>
+                    <p>Personalized surgical procedures to enhance your features and confidence.</p>
+                </div>
+                <div class="service-card">
+                    <div class="number">05</div>
+                    <h3>Microneedling</h3>
+                    <p>Stimulate collagen production for smoother, firmer, and more youthful skin.</p>
+                </div>
+                <div class="service-card">
+                    <div class="number">06</div>
+                    <h3>Skin Tightening</h3>
+                    <p>Non-invasive and minimally invasive options to achieve firmer, tighter skin.</p>
+                </div>
+            </div>
+            <div class="view-all-services">
+                <a href="#" class="btn-secondary">View all services &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="trust-experts container" id="about">
+        <div class="trust-image">
+            <img src="https://images.unsplash.com/photo-1587903806303-34674768378a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1NzM4MTl8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBtZWRpY2FsJTIwY2xpbmljJTIwaW50ZXJpb3IlMjB1bnNwbGFzaHxlbnwwfHx8fDE3MTk5Mjc1NTd8MA&ixlib=rb-4.0.3&q=80&w=1080" alt="Clinic Interior">
+        </div>
+        <div class="trust-content">
+            <h2>Why Thousands Trust Our Experts</h2>
+            <p>CAPILLA COSMETIC CENTRE in Salem offers advanced cosmetic and aesthetic treatments designed to enhance your natural beauty. Our expert cosmetic doctors and experienced cosmetic surgeons specialize in microneedling, skin tightening, hair restoration, and anti-aging solutions. With 4.9 Google reviews, we are trusted for safe, effective, and personalized care.</p>
+            <ul>
+                <li>✅ 10+ Years Experience</li>
+                <li>✅ Certified Specialists</li>
+                <li>✅ 4.9 Google Reviews</li>
+                <li>✅ Advanced Technology</li>
+                <li>✅ Personalized Care</li>
+                <li>✅ Visible, Lasting Results</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="gallery container">
+        <div class="section-title">
+            <h2>Real Transformations, Real Confidence</h2>
+            <p>See the incredible before-and-after results our patients have achieved.</p>
+        </div>
+        <div class="gallery-carousel">
+            <div class="gallery-item">
+                <img src="https://picsum.photos/id/1018/300/200" alt="Before After 1">
+                <div class="video-title">Skin Rejuvenation</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://picsum.photos/id/1015/300/200" alt="Before After 2">
+                <div class="video-title">Hair Restoration</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://picsum.photos/id/1016/300/200" alt="Before After 3">
+                <div class="video-title">Laser Treatment</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://picsum.photos/id/1019/300/200" alt="Before After 4">
+                <div class="video-title">Anti-Aging Solutions</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Patients Say</h2>
+                <p>Hear directly from those who have experienced our exceptional care.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"The results are amazing! My skin has never looked better. Highly recommend CAPILLA COSMETIC CENTRE."</p>
+                    <div class="patient-info">
+                        <img src="https://picsum.photos/id/237/50/50" alt="Patient 1">
+                        <span>Sarah J.</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Professional and caring staff. My hair transplant was a success, and I feel much more confident."</p>
+                    <div class="patient-info">
+                        <img src="https://picsum.photos/id/238/50/50" alt="Patient 2">
+                        <span>David L.</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Laser hair removal was quick and painless. Fantastic service and great results!"</p>
+                    <div class="patient-info">
+                        <img src="https://picsum.photos/id/239/50/50" alt="Patient 3">
+                        <span>Priya R.</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"The microneedling treatments have significantly improved my skin texture. Thank you!"</p>
+                    <div class="patient-info">
+                        <img src="https://picsum.photos/id/240/50/50" alt="Patient 4">
+                        <span>Anjali S.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="video-tips">
+        <div class="container">
+            <div class="section-title">
+                <h2>Watch Real Results & Expert Tips</h2>
+                <p>Learn more about our treatments and hear from our experts.</p>
+            </div>
+            <div class="video-grid">
+                <div class="video-card">
+                    <img src="https://picsum.photos/id/241/300/180" alt="Video Thumbnail 1">
+                    <div class="video-title">Understanding Microneedling</div>
+                </div>
+                <div class="video-card">
+                    <img src="https://picsum.photos/id/242/300/180" alt="Video Thumbnail 2">
+                    <div class="video-title">Benefits of Laser Hair Removal</div>
+                </div>
+                <div class="video-card">
+                    <img src="https://picsum.photos/id/243/300/180" alt="Video Thumbnail 3">
+                    <div class="video-title">Hair Transplant Journey</div>
+                </div>
+                <div class="video-card">
+                    <img src="https://picsum.photos/id/244/300/180" alt="Video Thumbnail 4">
+                    <div class="video-title">Achieving Youthful Skin</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about our services.</p>
+            </div>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header">How many sessions are required for laser hair removal?</div>
+                    <div class="accordion-content">
+                        <p>Typically, 6-8 sessions are recommended for optimal results, spaced 4-6 weeks apart.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">Is microneedling painful?</div>
+                    <div class="accordion-content">
+                        <p>A topical anesthetic cream is applied before the procedure to minimize discomfort.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">What is the recovery time for hair transplantation?</div>
+                    <div class="accordion-content">
+                        <p>Initial recovery takes about 1-2 weeks, with full results visible in 6-12 months.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">Are cosmetic surgeries safe?</div>
+                    <div class="accordion-content">
+                        <p>All our cosmetic surgeries are performed by experienced, certified surgeons in a sterile environment, ensuring utmost safety.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">How long do skin tightening results last?</div>
+                    <div class="accordion-content">
+                        <p>Results can last from 1-3 years, depending on the treatment type and individual factors.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="appointment-section" id="appointment">
+        <div class="container">
+            <div class="appointment-info">
+                <h2>Begin Your Transformation</h2>
+                <p>Book your consultation today and take the first step towards a more confident you.</p>
+                <p><strong>Address:</strong> No : 224 first floor SB colony, Opp Meccanos Marble Paradise, Junction Main Rd, near to Chennai Silks, Salem, Tamil Nadu 636004</p>
+                <p><strong>Contact:</strong> +919600133394</p>
+                <p><strong>Operating Hours:</strong> 10am to 8pm</p>
+                <p><a href="https://maps.app.goo.gl/RWG3R23A7tmip9kc7" target="_blank">View on Google Maps</a></p>
+            </div>
+            <div class="appointment-form-card">
+                <h3>Request an Appointment</h3>
+                <form>
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="tel" placeholder="Phone Number" required>
+                    <input type="email" placeholder="Email Address" required>
+                    <select required>
+                        <option value="">Select Service</option>
+                        <option value="skin-care">Skin Care Treatments</option>
+                        <option value="hair-transplantation">Hair Transplantation</option>
+                        <option value="laser-hair-removal">Laser Hair Removal</option>
+                        <option value="cosmetic-surgery">Cosmetic Surgery</option>
+                        <option value="microneedling">Microneedling</option>
+                        <option value="skin-tightening">Skin Tightening</option>
+                    </select>
+                    <button type="submit">Book Now</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <div class="logo">CAPILLA</div>
+                <p>CAPILLA COSMETIC CENTRE in Salem offers advanced cosmetic and aesthetic treatments designed to enhance your natural beauty.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">Skin Care Treatments</a></li>
+                    <li><a href="#">Hair Transplantation</a></li>
+                    <li><a href="#">Laser Hair Removal</a></li>
+                    <li><a href="#">Cosmetic Surgery</a></li>
+                    <li><a href="#">Microneedling</a></li>
+                    <li><a href="#">Skin Tightening</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p>No : 224 first floor SB colony, Opp Meccanos Marble Paradise, Junction Main Rd, near to Chennai Silks, Salem, Tamil Nadu 636004</p>
+                <p>Phone: +919600133394</p>
+                <p>Hours: 10am to 8pm</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 CAPILLA COSMETIC CENTRE. All rights reserved.
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919600133394" class="whatsapp-btn" target="_blank">
+        💬
+    </a>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const accordionItem = header.parentNode;
+                accordionItem.classList.toggle('active');
+            });
+        });
+
+        // Fade-in animation on scroll (simplified example)
+        const faders = document.querySelectorAll('.hero-content, .stats-bar, .treatments, .our-services, .trust-experts, .gallery, .testimonials, .video-tips, .faq, .appointment-section, .footer');
+
+        const appearOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -100px 0px"
+        };
+
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                }
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = 'translateY(0)';
+                appearOnScroll.unobserve(entry.target);
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            fader.style.opacity = 0;
+            fader.style.transform = 'translateY(20px)';
+            fader.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            appearOnScroll.observe(fader);
+        });
+
+    </script>
+</body>
+</html>
